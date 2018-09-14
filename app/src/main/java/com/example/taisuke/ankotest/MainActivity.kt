@@ -13,8 +13,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //intentの設定
-        val intent: Intent = Intent(this@MainActivity, NextActivity::class.java)
-
+        //val intent: Intent = Intent(this@MainActivity, NextActivity::class.java)
+        //val intent: Intent = Intent(this@MainActivity, QrCodeReadInViewActivity::class.java)
+        val intent: Intent = Intent(application, Main2Activity::class.java)
         create(intent)
 
     }
@@ -55,10 +56,12 @@ class MainActivity : AppCompatActivity() {
     private fun login(id: String, pass: String, intent: Intent) {
         //なんらかの処理を並列で行うことを予想してthreadで書いておいた
         thread {
+
             Thread.sleep(2000)
             //実際のログイン処理はいつか書く
-            if (id == "taisuke" && pass == "pass") {
+            if (id == "okonomiyaki" && pass == "12") {
                 //画面を遷移させる
+                toast("Success")
                 startActivity(intent) //ログイン後の画面に遷移する
             } else {
                 finish() //どう考えてもここはfinish()を使うべきではない

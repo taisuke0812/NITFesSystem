@@ -6,6 +6,14 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -24,7 +32,22 @@
         <activity android:name=".NextActivity" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity android:name=".NextActive" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <activity
+            android:name=".CamActivity"
+            android:label="@string/title_activity_cam" />
+        <activity android:name=".QrCodeReadInViewActivity" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".Kuchikomi"></activity>
     </application>
 
 </manifest>
