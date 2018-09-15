@@ -29,7 +29,8 @@ public class QrCodeReadInViewActivity extends AppCompatActivity {
                 //TextView textView = (TextView)findViewById(R.id.textView);
                 //textView.setText(barcodeResult.getText());
                 if(barcodeResult.getText().equals("お好み焼き")){
-                    Intent intent = new Intent(getApplication(), NextActivity.class);
+                    Intent intent = new Intent(getApplication(), Main2Activity.class);
+                    intent.putExtra("DATA",barcodeResult.getText());
                     startActivity(intent);
                 }
 
