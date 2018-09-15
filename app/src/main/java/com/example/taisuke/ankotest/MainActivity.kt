@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity() {
             if (id == "okonomiyaki" && pass == "12") {
                 //画面を遷移させる
                 toast("Success")
+                
                 startActivity(intent) //ログイン後の画面に遷移する
             } else {
                 finish() //どう考えてもここはfinish()を使うべきではない
