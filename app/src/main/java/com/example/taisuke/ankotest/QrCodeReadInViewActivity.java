@@ -27,6 +27,9 @@ import java.util.List;
 import java.util.Map;
 import java.time.LocalTime;
 import java.time.LocalDate;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class QrCodeReadInViewActivity extends AppCompatActivity {
 
@@ -58,11 +61,14 @@ public class QrCodeReadInViewActivity extends AppCompatActivity {
                     //時刻だけじゃなくて日付も送れないとまずいよね
                    // LocalTime time_data = LocalTime.now();
                     //time = toStr(time_data);
-                    data send_data = new data(1,"taisuke");
+                    Date date = new Date();
+                    String date_data = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date);
+                    data send_data = new data(1,date_data);
                     sendData(send_data);
 
                     Intent intent = new Intent(getApplication(), Main2Activity.class);
-                    intent.putExtra("DATA", barcodeResult.getText());
+                    //intent.putExtra("DATA", barcodeResult.getText());
+                    intent.putExtra("DATA",date_data);
                     startActivity(intent);
                 }
 

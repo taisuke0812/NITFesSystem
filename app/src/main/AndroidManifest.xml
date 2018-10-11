@@ -47,7 +47,9 @@
             android:label="@string/title_activity_cam" />
         <activity android:name=".QrCodeReadInViewActivity" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".Kuchikomi"></activity>
+        <activity android:name=".Kuchikomi" />
+        <activity android:name=".Graph" />
+        <activity android:name=".toki"></activity>
     </application>
 
 </manifest>
