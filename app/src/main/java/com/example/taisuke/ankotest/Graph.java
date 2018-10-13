@@ -30,6 +30,7 @@ public class Graph extends AppCompatActivity {
         setContentView(R.layout.activity_graph);
 
 
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("data");
         myRef.addValueEventListener(new ValueEventListener() {

@@ -48,6 +48,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent2 = new Intent(getApplication(), Kuchikomi.class);
                 startActivity(intent2);
+
             }
         });
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {

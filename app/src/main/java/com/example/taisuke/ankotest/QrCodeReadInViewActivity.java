@@ -58,6 +58,8 @@ public class QrCodeReadInViewActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
+
+
                     //時刻だけじゃなくて日付も送れないとまずいよね
                    // LocalTime time_data = LocalTime.now();
                     //time = toStr(time_data);
