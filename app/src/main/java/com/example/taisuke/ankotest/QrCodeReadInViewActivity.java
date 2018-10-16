@@ -65,7 +65,7 @@ public class QrCodeReadInViewActivity extends AppCompatActivity {
                     //time = toStr(time_data);
                     Date date = new Date();
                     String date_data = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date);
-                    data send_data = new data(1,date_data);
+                    data send_data = new data(1,"[" + date_data + "]");
                     sendData(send_data);
 
                     Intent intent = new Intent(getApplication(), Main2Activity.class);

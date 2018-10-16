@@ -17,6 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.google.firebase.internal.FirebaseAppHelper.getUid;
 
@@ -38,13 +40,14 @@ public class Graph extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
+                String regex = "\\[(.+?)\\]";
                 Map<String, Object> map = new HashMap<>();
                 map.put("time",dataSnapshot.getValue(Object.class));
                 String text = map.get("time").toString();
-                setText(text);
+                String text_data = matching(regex,text);
+                setText(text_data);
                 Log.d(TAG, "Value is: " + text);
             }
-
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
@@ -55,7 +58,6 @@ public class Graph extends AppCompatActivity {
         Intent i = getIntent();
         if(i.getStringExtra("DATA") != null) {
             String text = i.getStringExtra("DATA");
-
             i.getIntExtra("Count" ,num);
             if (num == 1) {
                 //TextView textView1 = findViewById(R.id.textview10);
@@ -81,6 +83,24 @@ public class Graph extends AppCompatActivity {
     void setText(String text){
         TextView textview1= findViewById(R.id.textview1);
         textview1.setText(text);
+    }
+
+    String matching(String regex, String target) {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(target);
+        StringBuilder buff = new StringBuilder();
+
+        /*if (matcher.find()) {
+            return matcher.group();
+        } else {
+            throw new IllegalStateException("No match found.");
+        }*/
+
+        while(matcher.find()){
+            buff.append(matcher.group(1) + "\n");
+        }
+
+        return buff.toString();
     }
 
 }
