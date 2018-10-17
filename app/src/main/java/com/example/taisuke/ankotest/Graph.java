@@ -89,7 +89,8 @@ public class Graph extends AppCompatActivity {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(target);
         StringBuilder buff = new StringBuilder();
-
+        String uriage = "時間 : ";
+        String kosuu = "個数 : 1 \n";
         /*if (matcher.find()) {
             return matcher.group();
         } else {
@@ -97,7 +98,7 @@ public class Graph extends AppCompatActivity {
         }*/
 
         while(matcher.find()){
-            buff.append(matcher.group(1) + "\n");
+            buff.append(uriage + matcher.group(1) + kosuu);
         }
 
         return buff.toString();
