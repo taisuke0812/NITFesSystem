@@ -23,9 +23,18 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:gravity="center_horizontal"
+            android:text="売上履歴"
+            android:textSize="60sp"
+            app:fontFamily="serif-monospace" />
+
+        <TextView
             android:id="@+id/textview1"
             android:layout_width="match_parent"
-            android:layout_height="436dp" />
+            android:layout_height="473dp" />
 
         <Button
             android:id="@+id/back"
@@ -33,4 +42,5 @@
             android:layout_height="wrap_content"
             android:text="back" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

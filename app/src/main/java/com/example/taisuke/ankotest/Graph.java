@@ -15,7 +15,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -92,16 +97,38 @@ public class Graph extends AppCompatActivity {
         String uriage = "時間 : ";
         String kosuu = "個数 : 1 \n";
         String space = "  ";
+        //String[] list = new String[100];
+        List<String> array = new ArrayList<String>();
         /*if (matcher.find()) {
             return matcher.group();
         } else {
             throw new IllegalStateException("No match found.");
         }*/
-
+        /*
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        for(j = 0;j < 100;j++){
+            list[j] = "";
+        }
         while(matcher.find()){
-            buff.append(uriage + matcher.group(1) + space + kosuu);
+            //buff.append(uriage + matcher.group(1) + space + kosuu);
+            list[i] = matcher.group(1);
+            i++;
         }
 
+        Arrays.sort(list);
+        for(k = 0;k < 100;k++){
+            buff.append(uriage + list[k].toString() + space + kosuu);
+        }*/
+        while(matcher.find()) {
+            array.add(matcher.group(1));
+        }
+
+        Collections.sort(array);
+        for(String string: array){
+            buff.append(uriage + string + space + kosuu);
+        }
         return buff.toString();
     }
 
