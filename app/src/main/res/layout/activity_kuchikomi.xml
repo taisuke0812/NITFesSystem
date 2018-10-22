@@ -19,13 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView_title"
-            android:layout_width="383dp"
-            android:layout_height="wrap_content"
-            android:text="口コミ"
-            android:textSize="60sp" />
-
         <WebView
             android:id="@+id/web"
             android:layout_width="match_parent"
