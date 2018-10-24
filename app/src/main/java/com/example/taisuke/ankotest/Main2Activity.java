@@ -62,6 +62,14 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
+        findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(getApplication(), MainActivity.class);
+
+                startActivity(intent4);
+            }
+        });
 
     }
 
