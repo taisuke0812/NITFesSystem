@@ -18,12 +18,13 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Intent i = getIntent();
+       /*
         if(i.getStringExtra("DATA") != null) {
            setName(i.getStringExtra("DATA"));
             TextView textView = findViewById(R.id.ReadData);
             textView.setText(getName());
             setCount(1);
-        }
+        }*/
 
 //ここに読み出しの部分を書きたい
 //        try {
@@ -32,10 +33,11 @@ public class Main2Activity extends AppCompatActivity {
 //        } catch (FileNotFoundException e) {
 //            e.printStackTrace();
 //        }
+        /*
         TextView write_text = findViewById(R.id.Write_Data);
         String data = "Read";
         write_text.setText(data);
-
+*/
         findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

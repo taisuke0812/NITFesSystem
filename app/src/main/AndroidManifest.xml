@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.taisuke.ankotest">
+    package="NIT_FES">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -52,7 +52,8 @@
         <activity android:name=".Graph" />
         <activity android:name=".toki" />
         <activity android:name=".button_activity" />
-        <activity android:name=".show_image"></activity>
+        <activity android:name=".show_image" />
+        <activity android:name=".Register"></activity>
     </application>
 
 </manifest>

@@ -17,14 +17,15 @@ class MainActivity : AppCompatActivity() {
         //val intent: Intent = Intent(this@MainActivity, QrCodeReadInViewActivity::class.java)
         //正式版は
         val intent: Intent = Intent(applicationContext, Main2Activity::class.java)
+        val intent2 : Intent = Intent(applicationContext, Register::class.java)
         //↑これです
         //val intent: Intent = Intent(applicationContext,toki::class.java)
-        create(intent)
+        create(intent,intent2)
 
     }
 
 
-    private fun create(intent: Intent){
+    private fun create(intent: Intent,intent2 : Intent){
         verticalLayout {
             gravity = Gravity.CENTER
             padding = dip(20)
@@ -52,6 +53,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }.lparams(dip(280), sp(60))
 
+            button("新規登録"){
+                onClick{
+                    startActivity(intent2)
+                }
+            }.lparams(dip(280), sp(60))
         }
 
     }
@@ -62,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
             //Thread.sleep(2000)
             //実際のログイン処理はいつか書く
-            if (id == "okonomiyaki" && pass == "12") {
+            if ((id == "okonomiyaki" && pass == "12") || (id == "yakitori" && pass == "15")) {
                 //画面を遷移させる
                 //toast("Success")
                 intent.putExtra("DATA","start")
