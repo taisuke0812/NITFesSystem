@@ -39,7 +39,8 @@ public class Main2Activity extends AppCompatActivity {
         findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplication(), QrCodeReadInViewActivity.class);
+                //Intent intent1 = new Intent(getApplication(), QrCodeReadInViewActivity.class);
+                Intent intent1 = new Intent(getApplication(), button_activity.class);
                 startActivity(intent1);
             }
         });
